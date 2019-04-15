@@ -23,7 +23,7 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.ViewHolder> 
     public EntryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(android.R.layout.simple_list_item_1, null);
+        View view = inflater.inflate(R.layout.entry, null);
         EntryAdapter.ViewHolder viewHolder = new EntryAdapter.ViewHolder(view);
         return viewHolder;
     }
@@ -31,13 +31,14 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull EntryAdapter.ViewHolder viewHolder, int i) {
         Entry entry = mEntries.get(i);
         viewHolder.textView.setText(entry.getEntryTitle());
- //       viewHolder.textView2.setText(entry.getEntryDescription());
+        viewHolder.textView2.setText(entry.getEntryDescription());
         //remove the strikethru
         viewHolder.textView.setPaintFlags(viewHolder.textView.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+        viewHolder.textView2.setPaintFlags(viewHolder.textView2.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
         if (entry.getEntryStrikeThru() == 1) {
             //add the strikethru
             viewHolder.textView.setPaintFlags(viewHolder.textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-  //          viewHolder.textView2.setPaintFlags(viewHolder.textView2.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            viewHolder.textView2.setPaintFlags(viewHolder.textView2.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
     }
 
@@ -48,11 +49,11 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
-   //     TextView textView2;
+        TextView textView2;
         public ViewHolder(View itemView) {
             super(itemView);
-            textView = itemView.findViewById(android.R.id.text1);
-   //         textView2 = itemView.findViewById(android.R.id.text2);
+            textView = itemView.findViewById(R.id.checkedTextView);
+            textView2 = itemView.findViewById(R.id.textView3);
         }
     }
 
