@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Bucket List</string>
+    <string name="action_settings">Settings</string>
+    <string name="create">Create</string>
+    <string name="add_a_title_for_your_list_entry">add a title for your list entry</string>
+    <string name="description">Description</string>
+    <string name="add_a_description_for_your_list_entry">add a description for your list entry</string>
+    <string name="title">Title</string>
+    <string name="emptyaddentry">Please enter a title and description</string>
+    <string name="delete_all">Delete All</string>
+</resources>
