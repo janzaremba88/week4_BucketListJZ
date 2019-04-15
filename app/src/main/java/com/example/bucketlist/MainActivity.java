@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerView.OnIt
             mRecyclerView.setAdapter(mAdapter);
         } else {
             mAdapter.swapList(mEntries);
+            mAdapter.notifyDataSetChanged();
         }
     }
 

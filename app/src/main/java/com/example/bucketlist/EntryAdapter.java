@@ -32,7 +32,10 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.ViewHolder> 
         Entry entry = mEntries.get(i);
         viewHolder.textView.setText(entry.getEntryTitle());
  //       viewHolder.textView2.setText(entry.getEntryDescription());
+        //remove the strikethru
+        viewHolder.textView.setPaintFlags(viewHolder.textView.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
         if (entry.getEntryStrikeThru() == 1) {
+            //add the strikethru
             viewHolder.textView.setPaintFlags(viewHolder.textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
   //          viewHolder.textView2.setPaintFlags(viewHolder.textView2.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
